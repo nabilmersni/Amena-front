@@ -1,0 +1,89 @@
+<div class="container">
+
+
+<div class="navigation navigation-scrolled"> 
+    <nav class="navigation__nav">
+        <div class="navigation__logo-box">
+            <lottie-player class="navigation__logo" src="https://assets3.lottiefiles.com/packages/lf20_ghD1Mu.json"  background="transparent"  speed="1"  style="width: auto; height: auto;"  loop  autoplay></lottie-player>
+        </div>
+        <ul class="navigation__list">
+            <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">About</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Donation methods</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">What's special</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
+            <div class="navigation__btn">
+                <a class="secondary-btn">Log in</a>
+                <a routerLink="/register" class="secondary-btn">Register</a>
+            </div>
+        </ul>
+    </nav>
+    
+</div>
+
+<div class="navigation-small navigation-scrolled">
+    <nav class="navigation-small__nav">
+        <div class="navigation-small__logo-box">
+            <lottie-player class="navigation-small__logo" src="https://assets3.lottiefiles.com/packages/lf20_ghD1Mu.json"  background="transparent"  speed="1"  style="width: auto; height: auto;"  loop  autoplay></lottie-player>
+        </div>
+
+        <div class="navigation-small__toggler">
+            <input class="navigation-small__input" type="checkbox" id="toggler">
+            <label for="toggler" class="navigation-small__label">
+                <h1 class="navigation-small__label-text">Menu</h1>
+                <span class="navigation-small__label-shape">&nbsp;</span>
+            </label>
+            <div class="navigation-small__bg">&nbsp;</div>
+        </div>
+
+    </nav>
+
+    <div class="navigation-small__list__container">
+        <ul class="navigation-small__list">
+            <li class="navigation-small__item"><a href="#" class="navigation-small__link">Home</a></li>
+            <li class="navigation-small__item"><a href="#" class="navigation-small__link">About</a></li>
+            <li class="navigation-small__item"><a href="#" class="navigation-small__link">Donation methods</a></li>
+            <li class="navigation-small__item"><a href="#" class="navigation-small__link">What's special</a></li>
+            <li class="navigation-small__item"><a href="#" class="navigation-small__link">Contact</a></li>
+            <div class="navigation-small__btn">
+                <a href="#" class="secondary-btn secondary-btn-small-nav">Log in</a>
+                <a href="#" class="secondary-btn secondary-btn-small-nav">Sign up</a>
+            </div>
+        </ul>
+    </div>
+    
+</div>
+
+<div class="log">
+    <img src="../../../../assets/img/lo" alt="" class="log__img">
+    <form [formGroup]="formLogin" (ngSubmit)="logIn()" class="log__form">
+        <h2 class="form__title" >Log in</h2>
+        <div class="form__group">
+            <input formControlName="email" type="text" class="form__input form__input--log" id="email" placeholder="Email" autocomplete="false"  required>
+            <label  for="email" class="form__label">Email</label>
+
+            <div *ngIf="logemail.touched && logemail.invalid" class="text-danger text-sm">
+                <div *ngIf="logemail.errors.email">invalid</div>
+                <div *ngIf="logemail.errors.required">required</div>
+                <div *ngIf="logemail.errors.minlength">must contains at least 2 character</div>
+              </div>
+        </div>
+
+        <div class="form__group">
+            <input formControlName="password" type="password" class="form__input form__input--log" id="password" placeholder="Password" autocomplete="off" required>
+            <label for="password" class="form__label">password</label>
+
+            <div *ngIf="logpassword.touched && logpassword.invalid" class="text-danger text-sm">
+                <div *ngIf="logpassword.errors.required">required</div>
+                <div *ngIf="logpassword.errors.minlength">must contains at least 8 character</div>
+              </div>
+        </div>
+
+        <button class="secondary-btn secondary-btn--roz" >Log in</button>
+
+        <p>don't have an account yet ?</p>
+        <a class="create" routerLink="/register">Create an account</a>
+    </form>
+</div>
+
+</div>

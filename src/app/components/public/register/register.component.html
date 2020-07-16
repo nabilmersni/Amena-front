@@ -1,0 +1,134 @@
+<div>
+
+
+    <div class="navigation navigation-scrolled"> 
+        <nav class="navigation__nav">
+            <div class="navigation__logo-box">
+                <lottie-player class="navigation__logo" src="https://assets3.lottiefiles.com/packages/lf20_ghD1Mu.json"  background="transparent"  speed="1"  style="width: auto; height: auto;"  loop  autoplay></lottie-player>
+            </div>
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Donation methods</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">What's special</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
+                <div class="navigation__btn">
+                    <a routerLink="/login" class="secondary-btn">Log in</a>
+                    <a class="secondary-btn">Register</a>
+                </div>
+            </ul>
+        </nav>
+        
+    </div>
+
+    <div class="navigation-small navigation-scrolled-up">
+        <nav class="navigation-small__nav">
+            <div class="navigation-small__logo-box">
+                <lottie-player class="navigation-small__logo" src="https://assets3.lottiefiles.com/packages/lf20_ghD1Mu.json"  background="transparent"  speed="1"  style="width: auto; height: auto;"  loop  autoplay></lottie-player>
+            </div>
+
+            <div class="navigation-small__toggler">
+                <input class="navigation-small__input" type="checkbox" id="toggler">
+                <label for="toggler" class="navigation-small__label">
+                    <h1 class="navigation-small__label-text">Menu</h1>
+                    <span class="navigation-small__label-shape">&nbsp;</span>
+                </label>
+                <div class="navigation-small__bg">&nbsp;</div>
+            </div>
+
+        </nav>
+
+        <div class="navigation-small__list__container">
+            <ul class="navigation-small__list">
+                <li class="navigation-small__item"><a href="#" class="navigation-small__link">Home</a></li>
+                <li class="navigation-small__item"><a href="#" class="navigation-small__link">About</a></li>
+                <li class="navigation-small__item"><a href="#" class="navigation-small__link">Donation methods</a></li>
+                <li class="navigation-small__item"><a href="#" class="navigation-small__link">What's special</a></li>
+                <li class="navigation-small__item"><a href="#" class="navigation-small__link">Contact</a></li>
+                <div class="navigation-small__btn">
+                    <a href="#" class="secondary-btn secondary-btn-small-nav">Log in</a>
+                    <a href="#" class="secondary-btn secondary-btn-small-nav">Sign up</a>
+                </div>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="log">
+        <img src="../img/log.png" alt="" class="log__img">
+        <form [formGroup]="formRegister" (ngSubmit)="registerUser()" class="log__form">
+            <h2 class="form__title" >Register</h2>
+
+            <div class="form__group">
+                <input formControlName="fullname" type="text" class="form__input form__input--log" id="name" placeholder="Full name" autocomplete="false"  required>
+                <label for="name" class="form__label">Full name</label>
+
+                <div class="input-alert" *ngIf="myFullName.touched && myFullName.invalid">
+                    <div class="input-alert" *ngIf="myFullName.errors.pattern">invalid</div>
+                    <div class="input-alert" *ngIf="myFullName.errors.required">required</div>
+                    <div class="input-alert" *ngIf="myFullName.errors.minlength">must contains at least 2 character</div>
+                </div>
+            </div>
+
+            <div class="form__group">
+                <input formControlName="username" type="text" class="form__input form__input--log" id="username" placeholder="Username" autocomplete="off" required>
+                <label for="username" class="form__label">Username</label>
+
+                <div class="input-alert" *ngIf="myUserName.touched && myUserName.invalid">
+                    <div class="input-alert" *ngIf="myUserName.errors.required">required</div>
+                    <div class="input-alert" *ngIf="myUserName.errors.minlength">must contains at least 2 character</div>
+                </div>
+            </div>
+
+            <div class="form__group">
+                <input formControlName="phone" type="number" class="form__input form__input--log" id="phone" placeholder="Phone" autocomplete="off" required>
+                <label for="phone" class="form__label">Phone</label>
+
+                <div *ngIf="myPhone.touched && myPhone.invalid">
+                    <div class="input-alert" *ngIf="myPhone.errors.pattern">invalid</div>
+                    <div class="input-alert" *ngIf="myPhone.errors.required">required</div>
+                    <div class="input-alert" *ngIf="myPhone.errors.minlength || myPhone.errors.maxlength">must contains 8 number</div>
+                  </div>
+            </div>
+
+            <div class="form__group">
+                <input formControlName="email" type="email" class="form__input form__input--log" id="email" placeholder="Email" autocomplete="off" required>
+                <label for="email" class="form__label">Email</label>
+
+                <div class="input-alert" *ngIf="myEmail.touched && myEmail.invalid">
+                    <div class="input-alert" *ngIf="myEmail.errors.email">invalid</div>
+                    <div class="input-alert" *ngIf="myEmail.errors.required">required</div>
+                    <div class="input-alert" *ngIf="myEmail.errors.minlength">must contains at least 2 character</div>
+                  </div>
+            </div>
+
+            <div class="form__group">
+                <input formControlName="password" type="password" class="form__input form__input--log" id="password" placeholder="Password" autocomplete="off" required>
+                <label for="password" class="form__label">Password</label>
+
+                <div class="input-alert" *ngIf="myPassword.touched && myPassword.invalid">
+                    <div class="input-alert" *ngIf="myPassword.errors.required">required</div>
+                    <div class="input-alert" *ngIf="myPassword.errors.minlength">must contains at least 8 character</div>
+                  </div>
+            </div>
+
+            <div class="form__group">
+                <input formControlName="repassword" type="password" class="form__input form__input--log" id="repassword" placeholder="Confirm Password" autocomplete="off" required>
+                <label for="repassword" class="form__label">Confirm Password</label>
+
+                <div class="input-alert" *ngIf="myPassword2.touched && myPassword2.invalid">
+                    <div class="input-alert" *ngIf="myPassword2.errors.required">required</div>
+                  </div>
+                  <div class="input-alert" *ngIf="myPassword2.touched && (myPassword2.value != myPassword.value) ">password do not match</div>
+            </div>
+
+            <button [disabled]="formRegister.invalid || (myPassword2.value != myPassword.value)" class="secondary-btn secondary-btn--roz" >Create</button>
+
+            <p>you already have an account ?</p>
+            <a class="create" href="#">Go to login</a>
+        </form>
+    </div>
+
+
+
+</div>

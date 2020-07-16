@@ -7,18 +7,33 @@ import { TestComponent } from './components/test/test.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { LoginComponent } from './components/public/login/login.component';
+import { TopbarComponent } from './components/public/topbar/topbar.component';
+import { RegisterComponent } from './components/public/register/register.component';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
+import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     TestComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+    TopbarComponent,
+    RegisterComponent,
+    DashboardComponent,
+    
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
