@@ -1938,3 +1938,17 @@
   margin-top: -19px;
   margin-left: 12px;
 }
+
+::-webkit-scrollbar{
+  width: 1rem;
+  border-radius: 5rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #D6DBFD;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #4A5BCF;
+  border-radius: 5rem;
+}
