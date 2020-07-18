@@ -341,7 +341,7 @@
 
                         &--title{
                             font-weight: 600;
-
+                            font-size: 2rem;
                         }
 
                         &--add-btn{
@@ -394,6 +394,90 @@
                         }
                     }
                 }
+
+                &__donation-h{
+                    margin-top: 3rem;
+
+                    .card-group{
+                        max-height: 28rem;
+                        padding-right: 1rem;
+                        overflow-y: scroll;
+
+                    }
+
+                    &__header{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        &--title{
+                            font-size: 2rem;
+                            font-weight: 600;
+                            margin: 2rem 0;
+                            margin-right: auto;
+                        }
+                        &::before,&::after {
+                            content: "";
+                            display: inline-block;
+                            width: 110%;
+                            height: 0.05rem;
+                            border-radius: 50rem;
+                            background-color: #D6DBFD;
+                        }
+                    }
+
+                    &__body{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin: 2rem 0;
+
+                        &__donor-info{
+                            display: flex;
+                            align-items: center;
+                            &__img{
+                                width: 5rem;
+                                height: 5rem;
+                                border-radius: 100rem;
+                                background-color: #D6DBFD;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 1rem;
+
+                                &-text{
+                                    font-size: 2rem;
+                                    font-weight: 600;
+                                }
+                            }
+
+                            .tt{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                            }
+
+                            &__fullname{
+                                font-size: 1.7rem;
+                                font-weight: 600;
+                            }
+                            &__date{
+                                font-size: 1.4rem;
+                            }
+                        }
+
+                        &__amount{
+                            font-size: 1.8rem;
+                            font-weight: 600;
+                            color: red;
+                        }
+                    }
+
+
+
+                }
+
+
             }
         }
 
