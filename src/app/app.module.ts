@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/public/register/register.compone
 import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { DashboardComponent } from './components/private/dashboard/dashboard.com
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
 
   ],
   providers: [],
