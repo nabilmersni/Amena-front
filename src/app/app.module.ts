@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './components/private/sidebar/sidebar.component';
 import { TopbarrComponent } from './components/private/topbarr/topbarr.component';
 import { UserDashComponent } from './components/private/user-side/user-dash/user-dash.component';
+import { UserHomeComponent } from './components/private/user-side/user-home/user-home.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UserDashComponent } from './components/private/user-side/user-dash/user
     SidebarComponent,
     TopbarrComponent,
     UserDashComponent,
+    UserHomeComponent,
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

@@ -5,6 +5,7 @@ import { LandingPageComponent } from './components/public/landing-page/landing-p
 import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
+import { UserHomeComponent } from './components/private/user-side/user-home/user-home.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: DashboardComponent
+  },
+
+  {
+    path: "home",
+    component: UserHomeComponent
   },
 
   {

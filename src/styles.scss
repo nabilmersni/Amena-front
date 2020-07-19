@@ -1,3 +1,21 @@
+progress {
+  display: block; /* default: inline-block */
+  width: 24rem;
+  height: 0.7rem;
+  margin: 0.5rem 0;
+  background: #ffffff;
+  border-radius: 3rem;
+}
+
+progress::-webkit-progress-bar {
+  background: transparent;
+} 
+
+progress::-webkit-progress-value {  
+  border-radius: 3rem;
+  background: #03BF8A;
+} 
+
 @-webkit-keyframes primary-btn {
     from {
       -webkit-transform: scale(1);

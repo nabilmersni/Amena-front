@@ -1,0 +1,198 @@
+.home{
+    margin: 9rem 0rem 0 3rem;
+    position: relative;
+
+    .create_fundraising{
+        width: 55rem;
+        padding: 1rem 2rem;
+        border-radius: 5rem;
+        background-color: #ffffff;
+        color: #4A5BCF;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__text{
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        &__btn{
+            background-color: #D6DBFD;
+            border: none;
+            border-radius: 5rem;
+            padding: 1rem;
+            color: #4A5BCF;
+            font-size: 1.6rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            outline: none;
+            transition: all 0.2s;
+
+            &__icon{
+                width: 2rem;
+                margin-right: 1rem;
+            }
+
+            &:hover{
+                transform: scale(1.02);
+            }
+        }
+    }
+
+
+    .home-fundraising{
+        margin-top: 2.5rem;
+        background-color: #FFFFFF;
+        grid-column: 1/3;
+        border-radius: 3rem;
+        color: #4A5BCF;
+        height: max-content;
+        
+
+        &__header{
+            width: 100%;
+            height: 5rem;
+            background-color: #D6DBFD;
+            border-top-right-radius: 3rem;
+            border-top-left-radius: 3rem;
+            border-bottom-right-radius: 0.9rem;
+            border-bottom-left-radius: 0.9rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+
+            &__title{
+                font-size: 2rem;
+            }
+        }
+
+        &__body{
+            margin-top: 1rem;
+            padding: 0 2.5rem;
+            
+
+            .card-group{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-row: 1fr;
+                column-gap: 4rem;
+                row-gap: 3rem;
+            }
+
+            .card{
+                background-color: #F4E3EB;
+                width: 100%;
+                color: #4A5BCF;
+                border-radius: 4rem;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &__img-container{
+                    width: 100%;
+                    height: 15rem;
+
+                    .card__img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 4rem;
+                        border-bottom-left-radius: 2rem;
+                        border-bottom-right-radius: 2rem;
+                        object-fit: cover;
+                    }
+                }
+
+                &__container{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    padding: 1rem;
+                }
+
+                &__title{
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    margin: 1rem 0;
+                    align-self: center;
+                }
+
+                &__description{
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    margin: 1rem 0;
+                    color: #10036A;
+                }
+
+                &__group__progress{
+                    margin: 1rem 0;
+
+                    &__last-donation{
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+
+                    &__amount{
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        span{
+                            font-weight: 800;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                &__bottom{
+                    padding: 0 2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                &__user-info{
+                    text-align: center;
+
+                    &__name{
+                        font-size: 1.6rem;
+                        margin-bottom: 0.3rem;
+                    }
+                    &__date{
+                        font-size: 1.3rem;
+                    }
+                }
+                .devider{
+                    align-self: center;
+                    background-color: #D6DBFD;
+                    height: 2px;
+                    width: 70%;
+                    border-radius: 50rem;
+                    margin: 1rem 0;
+                }
+                &__follow-btn{
+                    background-color: #FAF1F6;
+                    border: none;
+                    outline: none;
+                    border-radius: 5rem;
+                    padding: 1rem 2rem;
+                    color: #4A5BCF;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    transition: all 0.3s;
+                    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.103);
+
+                    &:hover{
+                        transform: scale(1.02);
+                    }
+                }
+
+                &:hover{
+                    transform: scale(1.01);
+                }
+            }
+
+            
+        }
+    }
+    
+}
+
