@@ -1,0 +1,50 @@
+.sidebar{
+    padding: 3rem 2rem 3rem 2rem;
+    //flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+
+    &__logo{
+        width: 17rem;
+        margin-bottom: 10rem;
+    }
+    &__item-group{
+        color: #4A5BCF;
+        display: flex;
+        flex-direction: column;
+    }
+    &__item ,.active{
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+
+        display: flex;
+        align-items: center;
+        padding: 1.3rem;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &__icon{
+            margin-right: 2rem;
+            width: 5rem;
+        }
+        &__name{
+            font-size: 2rem;
+        }
+
+        &:hover{
+            border-radius: 2rem;
+            background-color: rgba(214, 219, 253, 0.5);
+        }
+
+    }
+    .active{
+        border-radius: 2rem;
+        background-color: #F4E3EB;
+        
+    }
+}

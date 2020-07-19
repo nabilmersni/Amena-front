@@ -1,0 +1,71 @@
+.topbar{
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    z-index: 5;
+    /*
+    position: fixed;
+    top: 0;
+    right: 5rem;
+    z-index: 5;
+    */
+    &__shape{
+        display: flex;
+        flex-direction: row-reverse;
+
+        &-first{
+            width: 22rem;
+            background-color: #4A5BCF;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            border-radius: 1rem;
+        }
+
+        &-second{
+            width: 15rem;
+
+            margin-right: -10rem;
+            border-top-right-radius: 4rem;
+            border-bottom-left-radius: 4rem;
+            background-color: #D6DBFD;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3rem;
+
+            .topbar__btn{
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                padding: 0.5rem;
+                transition: all 0.5s;
+                outline-color: #4A5BCF;
+
+                &:hover{
+                    border-radius: 1rem;
+                    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.11);
+                    transform: scale(1.05);
+                }
+            }
+
+            .topbar_icons{
+                width: 2.5rem;
+            }
+        }
+
+    }
+
+    &__user-pic{
+        width: 5.5rem;
+        margin-left: 0.8rem;
+        border-radius: 50rem;
+        align-self: flex-start;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    &__user-name{
+        margin-left: auto;
+    }
+}
