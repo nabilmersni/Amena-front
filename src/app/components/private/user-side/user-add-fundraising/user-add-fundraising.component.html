@@ -1,0 +1,132 @@
+<div class="dashboard-container">
+
+    <!--sidebar-->
+    <app-sidebar></app-sidebar>
+    <!--sidebar-->
+
+    <div class="content">
+
+        <!--topbar-->
+        <app-topbarr></app-topbarr>
+        <!--topbar-->
+
+        <div class="greeting">
+            <span class="greeting__section-name">Create a Fundraising</span><span class="greeting__hello">Hello Nabil,
+                Welcome back.</span>
+        </div>
+
+
+        <div class="addFundrainsing-container">
+            <div class="addFundrainsing">
+                <div class="addFundrainsing__header">
+                    <h2 class="addFundrainsing__header__title">Create a Fundraising</h2>
+                </div>
+
+                <div class="addFundrainsing__body">
+                    <div class="log">
+                        <form [formGroup]="formAddFundraising" class="addFundrainsing-form log__form">
+
+
+                            <div class="upload-file__container">
+                                <!-- Card Header - Dropdown -->
+                                <h3 class="upload-file__title">Photo</h3>
+
+                                <div class="upload-file-body">
+
+                                    <div class="upload-file__img-container">
+                                        <img class="upload-file__img" [src]="url" alt="">
+                                    </div>
+
+                                    <div class="upload-file__btn-group">
+                                        <button type="button" class="btn upload-file__upload-btn" (click)="file.click()">
+                                            <i class="fas fa-file-upload" style="color: #4A5BCF;"></i> Upload
+                                        </button>
+
+                                        <button type="button" class="btn upload-file__annuler-btn" (click)="resetImg()">
+                                            <i class="far fa-trash-alt" style="color: red;"></i> Annuler
+                                        </button>
+
+                                        <input type="file" (change)="onSelectFile($event)"
+                                            accept="image/jpeg, image/png" #file
+                                            style="visibility: hidden;width:0px;height:0px">
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form__group">
+                                <input formControlName="title" type="text" class="form__input form__input--log"
+                                    id="name" placeholder="Title" autocomplete="false" required>
+                                <label for="name" class="form__label">Title</label>
+
+                                <div class="input-alert" *ngIf="mytitle.touched && mytitle.invalid">
+                                    <div class="input-alert" *ngIf="mytitle.errors.pattern">invalid</div>
+                                    <div class="input-alert" *ngIf="mytitle.errors.required">required</div>
+                                    <div class="input-alert" *ngIf="mytitle.errors.minlength">must contains at least
+                                        2 character</div>
+                                </div>
+                            </div>
+
+                            <div class="form__group">
+                                <input formControlName="Objectifamount" type="text" class="form__input form__input--log"
+                                    id="Objectifamount" placeholder="Objectif amount" autocomplete="off" required>
+                                <label for="Objectifamount" class="form__label">Objectif amount</label>
+
+                                <div class="input-alert" *ngIf="myObjectifamount.touched && myObjectifamount.invalid">
+                                    <div class="input-alert" *ngIf="myObjectifamount.errors.required">required</div>
+                                    <div class="input-alert" *ngIf="myObjectifamount.errors.minlength">must contains at least
+                                        2 character</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form__group form__group-select">
+
+
+
+                                <div class="input-group mb-5 select-input">
+                                    <div class="input-group-prepend">
+                                      <label class="input-group-text" for="phone">Type</label>
+                                    </div>
+                                    <select formControlName="type" class="custom-select" id="phone">
+                                      <option value="Medical">Medical</option>
+                                      <option value="Education">Education</option>
+                                      <option value="Event">Event</option>
+                                      <option value="Animals">Animals</option>
+                                      <option value="other">other</option>
+                                    </select>
+                                  </div>
+
+                                  <div *ngIf="mytype.touched && mytype.invalid">
+                                    <div class="input-alert" *ngIf="mytype.errors.required">required</div>
+                                </div>
+
+                            </div>
+
+                            <div class="form__group">
+                                <textarea formControlName="description" class="form__input form__input-message" name="" id="description" cols="30" rows="10"
+                                    placeholder="Description"></textarea>
+                                <label for="description" class="form__label form__label--message">Description</label>
+
+                                <div *ngIf="mydescription.touched && mydescription.invalid">
+                                    <div class="input-alert" *ngIf="mydescription.errors.required">required</div>
+                                </div>
+                            </div>
+
+
+
+                            <button
+                                [disabled]="formAddFundraising.invalid"
+                                class="secondary-btn secondary-btn--roz">Create</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

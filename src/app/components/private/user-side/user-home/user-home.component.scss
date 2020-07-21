@@ -30,6 +30,7 @@
             justify-content: space-between;
             outline: none;
             transition: all 0.2s;
+            cursor: pointer;
 
             &__icon{
                 width: 2rem;
@@ -70,8 +71,8 @@
         }
 
         &__body{
-            margin-top: 1rem;
-            padding: 0 2.5rem;
+            margin-top: 3rem;
+            padding: 1rem 2.5rem 3.5rem 2.5rem;
             
 
             .card-group{
@@ -79,7 +80,7 @@
                 grid-template-columns: repeat(3, 1fr);
                 grid-row: 1fr;
                 column-gap: 4rem;
-                row-gap: 3rem;
+                row-gap: 6rem;
             }
 
             .card{
