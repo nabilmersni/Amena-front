@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 import { UserHomeComponent } from './components/private/user-side/user-home/user-home.component';
 import { UserAddFundraisingComponent } from './components/private/user-side/user-add-fundraising/user-add-fundraising.component';
+import { UserProfileComponent } from './components/private/user-side/user-profile/user-profile.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,11 @@ const routes: Routes = [
   {
     path: "addFundraising",
     component: UserAddFundraisingComponent
+  },
+
+  {
+    path: "profile",
+    component: UserProfileComponent
   },
 
   {
