@@ -25,9 +25,9 @@
 
     <div class="dashboard__profile ">
         <div class="dashboard__profile__user">
-            <img src="../../../../assets/img/me.jpg" alt="" class="dashboard__profile__user__user-pic">
+            <img [src]="url" alt="" class="dashboard__profile__user__user-pic">
             <div class="dashboard__profile__user__user-info">
-                <span class="dashboard__profile__user__user-info--fullname">Nabil Mersni</span>
+                <span class="dashboard__profile__user__user-info--fullname">{{user.fullname}}</span>
                 <span class="dashboard__profile__user__user-info--account-etat">verified account <span> </span></span>
             </div>
         </div>

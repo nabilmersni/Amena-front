@@ -11,8 +11,7 @@
         <!--topbar-->
 
         <div class="greeting">
-            <span class="greeting__section-name">Profile</span><span class="greeting__hello">Hello Nabil,
-                Welcome back.</span>
+            <span class="greeting__section-name">Profile</span><span class="greeting__hello">Welcome back.</span>
         </div>
 
 
@@ -24,7 +23,7 @@
 
                 <div class="addFundrainsing__body">
                     <div class="log">
-                        <form [formGroup]="formAddFundraising" (ngSubmit)="test()" class="addFundrainsing-form log__form">
+                        <form [formGroup]="formAddFundraising" (ngSubmit)="updateUserInfo()" class="addFundrainsing-form log__form">
 
 
                             <div class="upload-file__container">
@@ -108,33 +107,8 @@
                                 </div>
                             </div>
 
-                            <div class="form__group">
-                                <input formControlName="password" type="password" class="form__input form__input--log"
-                                    id="password" placeholder="Password" autocomplete="off" required>
-                                <label for="password" class="form__label">Password</label>
-
-                                <div class="input-alert" *ngIf="myPassword.touched && myPassword.invalid">
-                                    <div class="input-alert" *ngIf="myPassword.errors.required">required</div>
-                                    <div class="input-alert" *ngIf="myPassword.errors.minlength">must contains at least
-                                        8 character</div>
-                                </div>
-                            </div>
-
-                            <div class="form__group">
-                                <input formControlName="repassword" type="password" class="form__input form__input--log"
-                                    id="repassword" placeholder="Confirm Password" autocomplete="off" required>
-                                <label for="repassword" class="form__label">Confirm Password</label>
-
-                                <div class="input-alert" *ngIf="myPassword2.touched && myPassword2.invalid">
-                                    <div class="input-alert" *ngIf="myPassword2.errors.required">required</div>
-                                </div>
-                                <div class="input-alert"
-                                    *ngIf="myPassword2.touched && (myPassword2.value != myPassword.value) ">password do
-                                    not match</div>
-                            </div>
-
                             <button type="submit"
-                                [disabled]="formAddFundraising.invalid || (myPassword2.value != myPassword.value)"
+                                [disabled]="formAddFundraising.invalid"
                                 class="secondary-btn secondary-btn--roz">Update</button>
 
                         </form>

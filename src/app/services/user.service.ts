@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
@@ -12,8 +12,15 @@ export class UserService {
 
   private _userRegisterUrl = this._baselocalUrl+ "/user/register";
   private _userLoginUrl = this._baselocalUrl + "/user/login";
+  private _getUserInfo = this._baselocalUrl + "/user/one/";
+
+
+
+  //common user and admin
+  private _updateAccountInfo = this._baselocalUrl + "/update/";
 
   constructor(private http:HttpClient) { }
+
   isLoggedAdmin(){
     let token = localStorage.getItem("token")
     if(token){
@@ -47,10 +54,9 @@ export class UserService {
   };
 
 
-
   isLoggedIn(){
     let token = localStorage.getItem("token")
-    let etat =  new JwtHelperService().decodeToken(token).etat;
+    //let id =  new JwtHelperService().decodeToken(localStorage.getItem("token")).id;
     if(token){
         return true
     }else{
@@ -70,6 +76,8 @@ export class UserService {
     }
   };
 
+  //username =  new JwtHelperService().decodeToken(localStorage.getItem("token")).username;
+
 
   registerUser(user:User){
     return this.http.post<any>(this._userRegisterUrl,user);
@@ -77,6 +85,18 @@ export class UserService {
 
   loginUser(user:User){
     return this.http.post<any>(this._userLoginUrl,user);
+  }
+
+  updateAccountInfo(formData){
+    let id =  new JwtHelperService().decodeToken(localStorage.getItem("token")).id;
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.patch<any>(this._updateAccountInfo+id,formData,{headers: headers_options});
+  }
+
+  getProfileInfo(){
+    let id =  new JwtHelperService().decodeToken(localStorage.getItem("token")).id;
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.get<any>(this._getUserInfo+id,{headers: headers_options});
   }
 
 }

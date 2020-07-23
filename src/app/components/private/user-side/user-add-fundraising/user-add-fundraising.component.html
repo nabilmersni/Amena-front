@@ -11,7 +11,7 @@
         <!--topbar-->
 
         <div class="greeting">
-            <span class="greeting__section-name">Create a Fundraising</span><span class="greeting__hello">Hello Nabil,
+            <span class="greeting__section-name">Create a Fundraising</span><span class="greeting__hello">
                 Welcome back.</span>
         </div>
 
@@ -24,7 +24,7 @@
 
                 <div class="addFundrainsing__body">
                     <div class="log">
-                        <form [formGroup]="formAddFundraising" class="addFundrainsing-form log__form">
+                        <form [formGroup]="formAddFundraising" (ngSubmit)="addPost()" class="addFundrainsing-form log__form">
 
 
                             <div class="upload-file__container">
@@ -69,7 +69,7 @@
                             </div>
 
                             <div class="form__group">
-                                <input formControlName="Objectifamount" type="text" class="form__input form__input--log"
+                                <input formControlName="amount" type="text" class="form__input form__input--log"
                                     id="Objectifamount" placeholder="Objectif amount" autocomplete="off" required>
                                 <label for="Objectifamount" class="form__label">Objectif amount</label>
 

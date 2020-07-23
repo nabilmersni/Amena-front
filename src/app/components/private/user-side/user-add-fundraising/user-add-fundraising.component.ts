@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
+import { Post } from 'src/app/models/post';
+import { PostService } from 'src/app/services/post.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-user-add-fundraising',
@@ -14,7 +18,7 @@ export class UserAddFundraisingComponent implements OnInit {
   url = "assets/img/default-img.png";
   uploadedFile: File;
 
-  constructor(private fb : FormBuilder, private userService: UserService, private router: Router) { 
+  constructor(private fb : FormBuilder, private userService: UserService,private postService: PostService, private router: Router) { 
 
     let addFundraisingControls = {
 
@@ -23,7 +27,7 @@ export class UserAddFundraisingComponent implements OnInit {
         Validators.pattern("[A-Za-z ']+"),
         Validators.minLength(2)
       ]),
-      Objectifamount : new FormControl("",[
+      amount : new FormControl("",[
         Validators.required,
       ]),
       type : new FormControl("",[
@@ -43,7 +47,7 @@ export class UserAddFundraisingComponent implements OnInit {
   }
 
   get mytitle(){return this.formAddFundraising.get('title');};
-  get myObjectifamount(){return this.formAddFundraising.get('Objectifamount');};
+  get myObjectifamount(){return this.formAddFundraising.get('amount');};
   get mytype(){return this.formAddFundraising.get('type');};
   get mydescription(){return this.formAddFundraising.get('description');};
 
@@ -64,5 +68,35 @@ export class UserAddFundraisingComponent implements OnInit {
     this.uploadedFile = event.target.files[0];
   }
 
+  //let data = this.formAddFundraising.value;
+  //let userId =  new JwtHelperService().decodeToken(localStorage.getItem("token")).id;
+  //let post = new Post(null,data.title,userId,data.type,data.description,null,null);
+
+  addPost(){
+    let data = this.formAddFundraising.value;
+    let userId =  new JwtHelperService().decodeToken(localStorage.getItem("token")).id;
+
+    let post = new Post(null,data.title,userId,data.type,data.amount,data.description,null,null);
+  
+    let formData = new FormData();
+  
+    formData.append("image", this.uploadedFile, this.uploadedFile.name);
+    formData.append("data", JSON.stringify(post));
+  
+    this.postService.addPost(formData).subscribe(
+      res => {
+        console.log("post added succefully !");
+        console.log(res);
+        this.router.navigateByUrl('/home');
+      },
+      err => {
+        console.log(err);
+      }
+    )
+
+  }
+
+
+  
 
 }

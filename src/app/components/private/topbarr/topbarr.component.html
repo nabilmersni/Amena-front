@@ -1,8 +1,8 @@
 <div class="topbar">
     <div class="topbar__shape">
         <div class="topbar__shape-first">
-            <img src="../../../../assets/img/me.jpg" alt="pic" class="topbar__user-pic">
-            <p class="topbar__user-name">Nabil</p>
+            <img routerLink="/profile" [src]="url" alt="pic" class="topbar__user-pic">
+            <p class="topbar__user-name">{{user.username}}</p>
         </div>
 
         <div class="topbar__shape-second">

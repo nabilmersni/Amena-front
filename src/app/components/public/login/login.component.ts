@@ -34,6 +34,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.userService.isLoggedIn()){
+      this.router.navigateByUrl("/dashboard");
+    }
   }
 
   get logemail(){return this.formLogin.get('email');};
