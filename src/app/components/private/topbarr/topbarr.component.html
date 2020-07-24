@@ -1,8 +1,8 @@
 <div class="topbar">
     <div class="topbar__shape">
         <div class="topbar__shape-first">
-            <img src="../../../../assets/img/me.jpg" alt="pic" class="topbar__user-pic">
-            <p class="topbar__user-name">Nabil</p>
+            <img routerLink="/profile" [src]="url" alt="pic" class="topbar__user-pic">
+            <p class="topbar__user-name">{{user.username}}</p>
         </div>
 
         <div class="topbar__shape-second">
@@ -10,7 +10,7 @@
                 <img class="topbar_icons" src="../../../../assets/img/notification-icon.png" alt="">
             </button>
 
-            <button class="topbar__btn topbar__logout">
+            <button (click)="logout()" class="topbar__btn topbar__logout">
                 <img class="topbar_icons" src="../../../../assets/img/logout-icon.png" alt="">
             </button>
         </div>

@@ -17,6 +17,8 @@ import { SidebarComponent } from './components/private/sidebar/sidebar.component
 import { TopbarrComponent } from './components/private/topbarr/topbarr.component';
 import { UserDashComponent } from './components/private/user-side/user-dash/user-dash.component';
 import { UserHomeComponent } from './components/private/user-side/user-home/user-home.component';
+import { UserAddFundraisingComponent } from './components/private/user-side/user-add-fundraising/user-add-fundraising.component';
+import { UserProfileComponent } from './components/private/user-side/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { UserHomeComponent } from './components/private/user-side/user-home/user
     TopbarrComponent,
     UserDashComponent,
     UserHomeComponent,
+    UserAddFundraisingComponent,
+    UserProfileComponent,
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

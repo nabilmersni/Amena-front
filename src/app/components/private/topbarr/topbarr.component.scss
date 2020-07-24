@@ -14,7 +14,7 @@
         flex-direction: row-reverse;
 
         &-first{
-            width: 22rem;
+            width: 24rem;
             background-color: #4A5BCF;
             display: flex;
             flex-direction: row-reverse;
@@ -59,7 +59,7 @@
 
     &__user-pic{
         width: 5.5rem;
-        margin-left: 0.8rem;
+        margin-left: 0.5rem;
         border-radius: 50rem;
         align-self: flex-start;
         padding: 0.5rem;
@@ -67,5 +67,8 @@
     }
     &__user-name{
         margin-left: auto;
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 0.2px;
     }
 }

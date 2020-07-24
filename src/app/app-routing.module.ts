@@ -6,6 +6,9 @@ import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 import { UserHomeComponent } from './components/private/user-side/user-home/user-home.component';
+import { UserAddFundraisingComponent } from './components/private/user-side/user-add-fundraising/user-add-fundraising.component';
+import { UserProfileComponent } from './components/private/user-side/user-profile/user-profile.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -27,12 +30,26 @@ const routes: Routes = [
 
   {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate : [AuthGuard]
   },
 
   {
     path: "home",
-    component: UserHomeComponent
+    component: UserHomeComponent,
+    canActivate : [AuthGuard]
+  },
+
+  {
+    path: "addFundraising",
+    component: UserAddFundraisingComponent,
+    canActivate : [AuthGuard]
+  },
+
+  {
+    path: "profile",
+    component: UserProfileComponent,
+    canActivate : [AuthGuard]
   },
 
   {
