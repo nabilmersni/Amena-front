@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Amena-front"
+  "defaultProject": "Amena-front",
+  "cli": {
+    "analytics": false
+  }
 }
