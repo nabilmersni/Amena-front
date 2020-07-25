@@ -9,6 +9,7 @@ import { UserHomeComponent } from './components/private/user-side/user-home/user
 import { UserAddFundraisingComponent } from './components/private/user-side/user-add-fundraising/user-add-fundraising.component';
 import { UserProfileComponent } from './components/private/user-side/user-profile/user-profile.component';
 import { AuthGuard } from './guards/auth.guard';
+import { FundDetailComponent } from './components/private/user-side/fund-detail/fund-detail.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,12 @@ const routes: Routes = [
   {
     path: "profile",
     component: UserProfileComponent,
+    canActivate : [AuthGuard]
+  },
+
+  {
+    path: "detail",
+    component: FundDetailComponent,
     canActivate : [AuthGuard]
   },
 

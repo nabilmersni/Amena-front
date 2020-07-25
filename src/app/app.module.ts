@@ -19,6 +19,7 @@ import { UserDashComponent } from './components/private/user-side/user-dash/user
 import { UserHomeComponent } from './components/private/user-side/user-home/user-home.component';
 import { UserAddFundraisingComponent } from './components/private/user-side/user-add-fundraising/user-add-fundraising.component';
 import { UserProfileComponent } from './components/private/user-side/user-profile/user-profile.component';
+import { FundDetailComponent } from './components/private/user-side/fund-detail/fund-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { UserProfileComponent } from './components/private/user-side/user-profil
     UserHomeComponent,
     UserAddFundraisingComponent,
     UserProfileComponent,
+    FundDetailComponent,
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

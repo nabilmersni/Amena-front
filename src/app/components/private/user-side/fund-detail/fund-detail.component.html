@@ -1,0 +1,168 @@
+<div class="dashboard-container">
+
+    <!--sidebar-->
+    <app-sidebar></app-sidebar>
+    <!--sidebar-->
+
+    <div class="content">
+        
+        <!--topbar-->
+        <app-topbarr></app-topbarr>
+        <!--topbar-->
+
+        <div class="greeting">
+            <span class="greeting__section-name">Fundraising detail</span><span class="greeting__hello">Welcome back.</span>
+        </div>
+
+        <div class="post-container">
+            <div class="post-fundraising">
+                <div class="post-fundraising__header">
+                    <h2 class="post-fundraising__header__title">Help sami to beat cancer</h2>
+                </div>
+        
+                <div class="post-fundraising__body">
+                    <div class="post-content">
+                        <div class="post-content__img-container">
+                            <img src="../../../../../assets/img/sami-cancer.jpg" alt="" class="post-content__img-container__img">
+                        </div>
+                        <div class="post-content__organizer-container">
+                            <div class="post-content__organizer-container__img-container">
+                                <img src="../../../../../assets/img/sami-cancer.jpg" alt="" class="post-content__organizer-container__img-container__img">
+                            </div>
+                            <div class="post-content__organizer-container__txt">Sami bensami is organizing this fundraiser.</div>
+                        </div>
+                        <div class="devider"></div>
+                        <div class="post-content__date-type">
+                            <div class="post-content__date-type__date"><span>Created </span> in 15-may-2020</div>
+                            <div class="post-content__date-type__type"><span>category</span> Medical, Illness & Healing</div>
+                        </div>
+                        <div class="devider"></div>
+
+                        <p class="post-content__description">
+                            Hello my name is sami and i have cancer, Our friend Negar was diagnosed with an aggressive form of cancer that has spread to her bones, lungs, liver, and brain. She has lost her ability to walk and a part of her vision. So far doctors have conducted several tests and scans including full-body MRI, brain scans, spine CT scan, a bone biopsy, and other tests to confirm the extent of the spread of cancer. The doctors are conducting more tests to decide the course of treatment for him.
+                        </p>
+
+                        <div class="devider"></div>
+
+                        <div class="post-content__update-container">
+                            <h2 class="post-content__update-container__header">Updates (1)</h2>
+
+                            <div class="post-content__update-container__card">
+                                <div class="post-content__update-container__card__header"><span>11 JULY 2020</span> by sami bensami, Organizer</div>
+                                <br>
+                                <p class="post-content__update-container__card__body">
+                                    Hi everyone, thank you very much for your support and help we're so close to attemp our objectif amount.
+                                </p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="devider"></div>
+
+                        <div class="post-content__comment-container">
+                            <h2 class="post-content__comment-container__header">Comments (3)</h2>
+
+                            <div class="post-content__comment-container__card">
+                                <div class="user-img-date">
+                                    <div class="post-content__comment-container__card__img-container">
+                                        <img src="../../../../../assets/img/me.jpg" alt="" class="post-content__comment-container__card__img-container__img">
+                                    </div>
+                                    <p class="post-content__comment-container__card__date">1d ago</p>
+                                </div>
+
+                                <div class="post-content__comment-container__card__header">Nabil Mersni donated <span>300 DNT</span>
+                                
+                                    <p class="post-content__comment-container__card__comment">nchalah labes.</p>
+                                </div>
+
+
+                            </div>
+
+                            <div class="post-content__comment-container__card">
+                                <div class="user-img-date">
+                                    <div class="post-content__comment-container__card__img-container">
+                                        <img src="../../../../../assets/img/me.jpg" alt="" class="post-content__comment-container__card__img-container__img">
+                                    </div>
+                                    <p class="post-content__comment-container__card__date">1d ago</p>
+                                </div>
+
+                                <div class="post-content__comment-container__card__header">Nabil Mersni donated <span>300 DNT</span>
+                                
+                                    <p class="post-content__comment-container__card__comment">nchalah labes.</p>
+                                </div>
+
+
+                            </div>
+
+                            <div class="post-content__comment-container__card">
+                                <div class="user-img-date">
+                                    <div class="post-content__comment-container__card__img-container">
+                                        <img src="../../../../../assets/img/me.jpg" alt="" class="post-content__comment-container__card__img-container__img">
+                                    </div>
+                                    <p class="post-content__comment-container__card__date">1d ago</p>
+                                </div>
+
+                                <div class="post-content__comment-container__card__header">Nabil Mersni donated <span>300 DNT</span>
+                                
+                                    <p class="post-content__comment-container__card__comment">nchalah labes.</p>
+                                </div>
+
+
+                            </div>
+                            
+                        </div>
+                                                
+
+                    </div>
+
+                    <div class="post-stat">
+                        
+                    </div>
+                </div>
+        
+            </div>
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--
+    <div class="card" *ngFor="let post of posts">
+                            <div class="card__img-container">
+                                <img [src]="'http://localhost:3000/'+post.image" alt="" class="card__img">
+                                
+                            </div>
+                            <div class="card__container">
+
+                                <div class="card__title">{{post.title}}</div>
+                                <p class="card__description">{{post.description}}</p>
+                                
+                                <div class="card__group__progress">
+                                    <p class="card__group__progress__last-donation">Last donation 1d ago</p>
+                                    <progress max="100" value="84"></progress>
+                                    <p class="card__group__progress__amount"><span>250000 DNT</span> raised of <span>300000 DNT</span></p>
+                                </div>
+
+                                <div class="devider"></div>
+
+                                <div class="card__bottom">
+                                    <div class="card__user-info">
+                                        <h2 class="card__user-info__name">{{post.userFullname}}</h2>
+                                        <p class="card__user-info__date">{{post.date}}</p>
+                                    </div>
+
+                                    <button class="card__follow-btn">Following</button>
+                                </div>
+
+                            </div>
+                        </div>
+-->
