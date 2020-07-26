@@ -169,22 +169,6 @@
                     border-radius: 50rem;
                     margin: 1rem 0;
                 }
-                &__follow-btn{
-                    background-color: #FAF1F6;
-                    border: none;
-                    outline: none;
-                    border-radius: 5rem;
-                    padding: 1rem 2rem;
-                    color: #4A5BCF;
-                    font-size: 1.6rem;
-                    font-weight: 600;
-                    transition: all 0.3s;
-                    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.103);
-
-                    &:hover{
-                        transform: scale(1.02);
-                    }
-                }
 
                 &:hover{
                     transform: scale(1.01);
@@ -197,3 +181,19 @@
     
 }
 
+.follow-btn{
+    background-color: #FAF1F6;
+    border: none;
+    outline: none;
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+    color: #4A5BCF;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.103);
+
+    &:hover{
+        transform: scale(1.02);
+    }
+}
