@@ -158,18 +158,18 @@
         <div class="dashboard__follow-fundraising__body">
             <div class="card-group">
 
-                <div class="dashboard__follow-fundraising__body__card">
+                <div class="dashboard__follow-fundraising__body__card" *ngFor="let post of myPost" (click)= "routeTodetail(post._id)">
                     <div class="dashboard__follow-fundraising__body__card__img">
-                        <img src="../../../../assets/img/sami-cancer.jpg" alt="" class="dashboard__follow-fundraising__body__card__img-1">
+                        <img [src]="postImg + post.image" alt="" class="dashboard__follow-fundraising__body__card__img-1">
                     </div>
 
                     <div class="dashboard__follow-fundraising__body__card__content">
-                        <h2 class="dashboard__follow-fundraising__body__card__content__title">Help Sami to beat cancer</h2>
+                        <h2 class="dashboard__follow-fundraising__body__card__content__title">{{post.title}}</h2>
                         
                         <div class="dashboard__follow-fundraising__body__card__content__group">
                             <div class="dashboard__follow-fundraising__body__card__content__group__user-info">
-                                <h2 class="dashboard__follow-fundraising__body__card__content__group__user-info__name">Sami bensami</h2>
-                                <p class="dashboard__follow-fundraising__body__card__content__group__user-info__date">14-may-2020</p>
+                                <h2 class="dashboard__follow-fundraising__body__card__content__group__user-info__name">{{post.userFullname}}</h2>
+                                <p class="dashboard__follow-fundraising__body__card__content__group__user-info__date">{{post.date}}</p>
                             </div>
 
                             <div class="dashboard__follow-fundraising__body__card__content__group__progress">
@@ -186,6 +186,7 @@
 
     </div>
 
+    <!-------------------------------------------------------------------->
     <div class="dashboard__follow-fundraising">
         <div class="dashboard__follow-fundraising__header">
             <h2 class="dashboard__follow-fundraising__header__title">Fundraising you follow</h2>

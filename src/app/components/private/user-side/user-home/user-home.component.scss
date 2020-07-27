@@ -145,10 +145,11 @@
                 }
 
                 &__bottom{
-                    padding: 0 2rem;
+                    padding: 1rem 2rem;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    height: 100%;
                 }
                 &__user-info{
                     text-align: center;

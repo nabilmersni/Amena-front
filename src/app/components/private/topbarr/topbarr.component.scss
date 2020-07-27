@@ -12,6 +12,7 @@
     &__shape{
         display: flex;
         flex-direction: row-reverse;
+        min-height: 5rem;
 
         &-first{
             width: 24rem;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
+
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -28,6 +28,10 @@ export class UserHomeComponent implements OnInit {
 
   routeToAddFundraising(){
     this.route.navigateByUrl("/addFundraising");
+  }
+
+  routeTodetail(id){
+    this.route.navigateByUrl("/detail/"+id);
   }
 
 }

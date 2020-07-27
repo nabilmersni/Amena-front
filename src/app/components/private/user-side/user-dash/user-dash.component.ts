@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-user-dash',
@@ -13,11 +14,18 @@ export class UserDashComponent implements OnInit {
   username;
   user;
   url;
+  myPost = [];
+  postImg = "http://localhost:3000/";
 
-  constructor(private router: Router,private userService:UserService) { }
+
+  constructor(private router: Router,private userService:UserService, private postService: PostService,private route: Router) { }
 
   ngOnInit(): void {
+    this.getProfileInfo();
+    this.getMyPost();
+  }
 
+  getProfileInfo(){
     this.userService.getProfileInfo().subscribe(
       res => {
         this.user = res;
@@ -31,6 +39,18 @@ export class UserDashComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  getMyPost(){
+    this.postService.getMyPost().subscribe(
+      res =>{
+        this.myPost = res;
+      }
+    )
+  }
+
+  routeTodetail(id){
+    this.route.navigateByUrl("/detail/"+id);
   }
 
 }

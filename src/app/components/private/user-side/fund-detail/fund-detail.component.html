@@ -17,30 +17,28 @@
         <div class="post-container">
             <div class="post-fundraising">
                 <div class="post-fundraising__header">
-                    <h2 class="post-fundraising__header__title">Help sami to beat cancer</h2>
+                    <h2 class="post-fundraising__header__title">{{post.title}}</h2>
                 </div>
         
                 <div class="post-fundraising__body">
                     <div class="post-content">
                         <div class="post-content__img-container">
-                            <img src="../../../../../assets/img/sami-cancer.jpg" alt="" class="post-content__img-container__img">
+                            <img [src]="fundImg" alt="" class="post-content__img-container__img">
                         </div>
                         <div class="post-content__organizer-container">
                             <div class="post-content__organizer-container__img-container">
-                                <img src="../../../../../assets/img/sami-cancer.jpg" alt="" class="post-content__organizer-container__img-container__img">
+                                <img [src]="userImg" alt="" class="post-content__organizer-container__img-container__img">
                             </div>
-                            <div class="post-content__organizer-container__txt">Sami bensami is organizing this fundraiser.</div>
+                            <div class="post-content__organizer-container__txt">{{user.fullname}} is organizing this fundraiser.</div>
                         </div>
                         <div class="devider"></div>
                         <div class="post-content__date-type">
-                            <div class="post-content__date-type__date"><span>Created </span> in 15-may-2020</div>
-                            <div class="post-content__date-type__type"><span>category</span> Medical, Illness & Healing</div>
+                            <div class="post-content__date-type__date"><span>Created </span> in {{post.date}}</div>
+                            <div class="post-content__date-type__type"><span>category</span> {{post.type}}</div>
                         </div>
                         <div class="devider"></div>
 
-                        <p class="post-content__description">
-                            Hello my name is sami and i have cancer, Our friend Negar was diagnosed with an aggressive form of cancer that has spread to her bones, lungs, liver, and brain. She has lost her ability to walk and a part of her vision. So far doctors have conducted several tests and scans including full-body MRI, brain scans, spine CT scan, a bone biopsy, and other tests to confirm the extent of the spread of cancer. The doctors are conducting more tests to decide the course of treatment for him.
-                        </p>
+                        <p class="post-content__description">{{post.description}}</p>
 
                         <div class="devider"></div>
 
@@ -48,7 +46,7 @@
                             <h2 class="post-content__update-container__header">Updates (1)</h2>
 
                             <div class="post-content__update-container__card">
-                                <div class="post-content__update-container__card__header"><span>11 JULY 2020</span> by sami bensami, Organizer</div>
+                                <div class="post-content__update-container__card__header"><span>11 JULY 2020</span> by {{user.fullname}}, Organizer</div>
                                 <br>
                                 <p class="post-content__update-container__card__body">
                                     Hi everyone, thank you very much for your support and help we're so close to attemp our objectif amount.

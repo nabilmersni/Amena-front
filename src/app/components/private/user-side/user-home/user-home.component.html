@@ -30,7 +30,7 @@
                 <div class="home-fundraising__body">
                     <div class="card-group">
         
-                        <div class="card" *ngFor="let post of posts">
+                        <div class="card" *ngFor="let post of posts" (click)= "routeTodetail(post._id)">
                             <div class="card__img-container">
                                 <img [src]="'http://localhost:3000/'+post.image" alt="" class="card__img">
                                 <!--../../../../../assets/img/sami-cancer.jpg-->
@@ -38,7 +38,7 @@
                             <div class="card__container">
 
                                 <div class="card__title">{{post.title}}</div>
-                                <p class="card__description">{{post.description}}</p>
+                                <p class="card__description">{{ (post.description.length>164)? (post.description | slice:0:164)+'...':(post.description) }}</p>
                                 
                                 <div class="card__group__progress">
                                     <p class="card__group__progress__last-donation">Last donation 1d ago</p>

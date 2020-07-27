@@ -12,6 +12,9 @@ export class PostService {
 
   private _postAddUrl = this._baselocalUrl+ "/post/add";
   private _getAllPost = this._baselocalUrl+ "/post/all";
+  private _getPostDetail = this._baselocalUrl+ "/post/detail/";
+  private _getMyPost = this._baselocalUrl+ "/post/MyPost/";
+
 
 
   constructor(private http:HttpClient) { }
@@ -24,6 +27,17 @@ export class PostService {
   getAllPost(){
     let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
     return this.http.get<any>(this._getAllPost,{headers: headers_options});
+  }
+
+  getMyPost(){
+    let id =  new JwtHelperService().decodeToken(localStorage.getItem("token")).id;
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.get<any>(this._getMyPost+id,{headers: headers_options});
+  }
+
+  getPostDetail(id){
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.get<any>(this._getPostDetail+id,{headers: headers_options});
   }
   
 

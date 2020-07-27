@@ -99,4 +99,9 @@ export class UserService {
     return this.http.get<any>(this._getUserInfo+id,{headers: headers_options});
   }
 
+  getUserById(id){
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.get<any>(this._getUserInfo+id,{headers: headers_options});
+  }
+
 }
