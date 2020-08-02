@@ -1,0 +1,104 @@
+<div class="dashboard-container">
+
+    <!--sidebar-->
+    <app-sidebar></app-sidebar>
+    <!--sidebar-->
+
+    <div class="content">
+
+        <!--topbar-->
+        <app-topbarr></app-topbarr>
+        <!--topbar-->
+
+        <div class="greeting">
+            <span class="greeting__section-name">Add User</span><span class="greeting__hello">Welcome back.</span>
+        </div>
+
+
+        <div class="addUser-container">
+            <div class="addUser">
+                <div class="addUser__header">
+                    <h2 class="addUser__header__title">Add new user</h2>
+                </div>
+
+                <div class="addUser__body">
+                    <div class="log">
+                        <img src="../img/log.png" alt="" class="log__img">
+                        <form [formGroup]="formRegister" (ngSubmit)="registerUser()" class="log__form">
+                            <h2 class="form__title" >Register</h2>
+                    
+                            <div class="form__group">
+                                <input formControlName="fullname" type="text" class="form__input form__input--log" id="name" placeholder="Full name" autocomplete="false"  required>
+                                <label for="name" class="form__label">Full name</label>
+                    
+                                <div class="input-alert" *ngIf="myFullName.touched && myFullName.invalid">
+                                    <div class="input-alert" *ngIf="myFullName.errors.pattern">invalid</div>
+                                    <div class="input-alert" *ngIf="myFullName.errors.required">required</div>
+                                    <div class="input-alert" *ngIf="myFullName.errors.minlength">must contains at least 2 character</div>
+                                </div>
+                            </div>
+                    
+                            <div class="form__group">
+                                <input formControlName="username" type="text" class="form__input form__input--log" id="username" placeholder="Username" autocomplete="off" required>
+                                <label for="username" class="form__label">Username</label>
+                    
+                                <div class="input-alert" *ngIf="myUserName.touched && myUserName.invalid">
+                                    <div class="input-alert" *ngIf="myUserName.errors.required">required</div>
+                                    <div class="input-alert" *ngIf="myUserName.errors.minlength">must contains at least 2 character</div>
+                                </div>
+                            </div>
+                    
+                            <div class="form__group">
+                                <input formControlName="phone" type="number" class="form__input form__input--log" id="phone" placeholder="Phone" autocomplete="off" required>
+                                <label for="phone" class="form__label">Phone</label>
+                    
+                                <div *ngIf="myPhone.touched && myPhone.invalid">
+                                    <div class="input-alert" *ngIf="myPhone.errors.pattern">invalid</div>
+                                    <div class="input-alert" *ngIf="myPhone.errors.required">required</div>
+                                    <div class="input-alert" *ngIf="myPhone.errors.minlength || myPhone.errors.maxlength">must contains 8 number</div>
+                                  </div>
+                            </div>
+                    
+                            <div class="form__group">
+                                <input formControlName="email" type="email" class="form__input form__input--log" id="email" placeholder="Email" autocomplete="off" required>
+                                <label for="email" class="form__label">Email</label>
+                    
+                                <div class="input-alert" *ngIf="myEmail.touched && myEmail.invalid">
+                                    <div class="input-alert" *ngIf="myEmail.errors.email">invalid</div>
+                                    <div class="input-alert" *ngIf="myEmail.errors.required">required</div>
+                                    <div class="input-alert" *ngIf="myEmail.errors.minlength">must contains at least 2 character</div>
+                                  </div>
+                            </div>
+                    
+                            <div class="form__group">
+                                <input formControlName="password" type="password" class="form__input form__input--log" id="password" placeholder="Password" autocomplete="off" required>
+                                <label for="password" class="form__label">Password</label>
+                    
+                                <div class="input-alert" *ngIf="myPassword.touched && myPassword.invalid">
+                                    <div class="input-alert" *ngIf="myPassword.errors.required">required</div>
+                                    <div class="input-alert" *ngIf="myPassword.errors.minlength">must contains at least 8 character</div>
+                                  </div>
+                            </div>
+                    
+                            <div class="form__group">
+                                <input formControlName="repassword" type="password" class="form__input form__input--log" id="repassword" placeholder="Confirm Password" autocomplete="off" required>
+                                <label for="repassword" class="form__label">Confirm Password</label>
+                    
+                                <div class="input-alert" *ngIf="myPassword2.touched && myPassword2.invalid">
+                                    <div class="input-alert" *ngIf="myPassword2.errors.required">required</div>
+                                  </div>
+                                  <div class="input-alert" *ngIf="myPassword2.touched && (myPassword2.value != myPassword.value) ">password do not match</div>
+                            </div>
+                    
+                            <button [disabled]="formRegister.invalid || (myPassword2.value != myPassword.value)" class="secondary-btn secondary-btn--roz" >Create</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,337 @@
+.users{
+    margin: 9rem 4rem 0 4rem;
+    position: relative;
+
+    .add_user{
+        width: 55rem;
+        padding: 1rem 2rem;
+        border-radius: 5rem;
+        background-color: #ffffff;
+        color: #4A5BCF;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__text{
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        &__btn{
+            background-color: #D6DBFD;
+            border: none;
+            border-radius: 5rem;
+            padding: 1rem;
+            color: #4A5BCF;
+            font-size: 1.6rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            outline: none;
+            transition: all 0.2s;
+            cursor: pointer;
+
+            &__icon{
+                width: 2rem;
+                margin-right: 1rem;
+            }
+
+            &:hover{
+                transform: scale(1.02);
+            }
+        }
+    }
+
+
+    .users-list{
+        grid-column: 1/3;
+        border-radius: 3rem;
+        color: #4A5BCF;
+        height: max-content;
+        padding-top: 0;
+        
+
+
+        &__body{
+            margin-top: 1.6rem;
+            
+            
+        }
+    }
+    
+}
+
+
+
+.follow-btn{
+    background-color: #FAF1F6;
+    border: none;
+    outline: none;
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+    color: #4A5BCF;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.103);
+
+    &:hover{
+        transform: scale(1.02);
+    }
+}
+
+
+
+
+
+.user-table{
+    border-collapse:separate; 
+    border-spacing:0 1.9rem;
+    font-size: 1.6rem;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    //box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    thead tr {
+        background-color: #D6DBFD;
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+        border-spacing: 0 0;
+        
+        th{
+            padding: 2rem;
+            color: #4A5BCF;
+            font-size: 1.8rem;
+
+
+            &:first-child {
+                border-left-style: solid;
+                border-top-left-radius: 3rem; 
+                border-bottom-left-radius: 0.9rem;
+                border-color: transparent;
+            }
+            &:last-child {
+                border-right-style: solid;
+                border-bottom-right-radius: 0.9rem; 
+                border-top-right-radius: 3rem; 
+                border-color: transparent;
+            }
+        }
+
+      }
+
+      tbody{
+          
+        tr {
+            border-bottom: 1px solid #dddddd;
+            background-color: #ffffff;
+            font-size: 1.7rem;
+    
+            .fullname-td{
+                
+                &__container{
+                    display: flex;
+                    align-items: center;
+                }
+                
+                &__img-container{
+                    width: 6rem;
+                    height: 6rem;
+                    margin-right: 1.5rem;
+    
+                    &__img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50rem;
+                    }
+    
+                }
+                &__fullname-username{
+    
+                    &__fullname{
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                    }
+                    &__username{
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        color: rgb(123, 136, 255);
+                    }
+                }
+    
+    
+            }
+
+            .btn-td{
+
+                &__btn{
+                    background-color: #FAF1F6;
+                    border: none;
+                    outline: none;
+                    border-radius: 1rem;
+                    padding: 1.5rem;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                    margin: 0 0.5rem;
+
+                    &:hover{
+                        background-color: rgb(255, 169, 169);
+                    }
+
+                    &__icon{
+                        width: 2rem;
+                        height: 2.2rem;
+                    }
+                }
+            }
+
+            .state-td{
+
+                &__active, &__unactive{
+                    padding: 0.4rem 2.5rem;
+                    background-color: #03BF8A;
+                    border-radius: 1.2rem;
+                    color: white;
+                }
+
+                &__unactive{
+                    background-color: #DC284C;
+                }
+            }
+    
+            td{
+                padding: 3rem 2rem;
+    
+    
+                &:first-child{
+                    border-left-style: solid;
+                    border-top-left-radius: 2rem !important; 
+                    border-bottom-left-radius: 2rem !important;
+                    border-color: transparent;
+                }
+                &:last-child{
+                    border-right-style: solid;
+                    border-bottom-right-radius: 2rem; 
+                    border-top-right-radius: 2rem; 
+                    border-color: transparent;
+                }
+            }
+    
+          }
+      }
+
+
+      
+
+
+}
+
+  
+
+
+
+/*
+            .card-group{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-row: 1fr;
+                column-gap: 4rem;
+                row-gap: 6rem;
+            }
+
+            .card{
+                background-color: #F4E3EB;
+                width: 100%;
+                color: #4A5BCF;
+                border-radius: 4rem;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &__img-container{
+                    width: 100%;
+                    height: 15rem;
+
+                    .card__img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 4rem;
+                        border-bottom-left-radius: 2rem;
+                        border-bottom-right-radius: 2rem;
+                        object-fit: cover;
+                    }
+                }
+
+                &__container{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    padding: 1rem;
+                }
+
+                &__title{
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    margin: 1rem 0;
+                    align-self: center;
+                }
+
+                &__description{
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    margin: 1rem 0;
+                    color: #10036A;
+                }
+
+                &__group__progress{
+                    margin: 1rem 0;
+
+                    &__last-donation{
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+
+                    &__amount{
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        span{
+                            font-weight: 800;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                &__bottom{
+                    padding: 1rem 2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                }
+                &__user-info{
+                    text-align: center;
+
+                    &__name{
+                        font-size: 1.6rem;
+                        margin-bottom: 0.3rem;
+                    }
+                    &__date{
+                        font-size: 1.3rem;
+                    }
+                }
+                .devider{
+                    align-self: center;
+                    background-color: #D6DBFD;
+                    height: 2px;
+                    width: 70%;
+                    border-radius: 50rem;
+                    margin: 1rem 0;
+                }
+
+                &:hover{
+                    transform: scale(1.01);
+                }
+            }
+*/

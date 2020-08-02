@@ -1,0 +1,80 @@
+
+<div class="dashboard-container">
+
+    <!--sidebar-->
+    <app-sidebar></app-sidebar>
+    <!--sidebar-->
+
+    <div class="content">
+
+        <!--topbar-->
+        <app-topbarr></app-topbarr>
+        <!--topbar-->
+
+        <div class="greeting">
+            <span class="greeting__section-name">User List</span><span class="greeting__hello">Welcome back.</span>
+        </div>
+
+        <div class="users">
+            <div class="add_user">
+                <h2 class="add_user__text">Add New User</h2>
+                <button [routerLink]="['/userManagment/user-add/']"  class="add_user__btn"><img src="../../../../../assets/img/add-icon.png" alt="" class="add_user__btn__icon"> Add</button>
+            </div>
+
+
+            <!---->
+            <div class="users-list">
+
+
+                <div class="users-list__body">
+                    <table class="user-table">
+                        <thead>
+                          <tr>
+                            <th>Full name</th>
+                            <th>email</th>
+                            <th>phone</th>
+                            <th>account state</th>
+                            <th>#</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                          <tr *ngFor="let user of users ,let i = index">
+                            <td class="fullname-td">
+                              <div class="fullname-td__container">
+                                <div class="fullname-td__img-container">
+                                  <img class="fullname-td__img-container__img" [src]="'http://localhost:3000/'+user.image" alt="">
+                                </div>
+                                <div class="fullname-td__fullname-username">
+                                  <p class="fullname-td__fullname-username__fullname">{{user.fullname}}</p>
+                                  <p class="fullname-td__fullname-username__username">{{user.username}}</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.phone}}</td>
+                            <td class="state-td">
+                              <span *ngIf="user.etat" class="state-td__active">active</span>
+                              <span *ngIf="!user.etat" class="state-td__unactive">unactive</span>
+                            </td>
+                            <td class="btn-td">
+                              <button *ngIf="user.etat" (click)="updateUserState(user._id)" class="btn-td__btn"><img src="../../../../../../assets/img/lock-icon.png" alt="" class="btn-td__btn__icon"></button>
+                              <button *ngIf="!user.etat" (click)="updateUserState(user._id)" class="btn-td__btn"><img src="../../../../../../assets/img/unlock-icon.png" alt="" class="btn-td__btn__icon"></button>
+                              <button [routerLink]="['/userManagment/user-update/', user._id]" class="btn-td__btn"><img src="../../../../../../assets/img/edit-icon.png" alt="" class="btn-td__btn__icon"></button>
+                              <button (click)="deleteUser(user,i)" class="btn-td__btn"><img src="../../../../../../assets/img/trash-icon.png" alt="" class="btn-td__btn__icon"></button>
+                            </td>
+
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                </div>
+        
+            </div>
+            <!---->
+        </div>
+
+        
+
+    </div>
+</div>

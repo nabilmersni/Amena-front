@@ -15,8 +15,12 @@
         </div>
 
         <!--user-dash-->
-        <app-user-dash *ngIf="true"></app-user-dash>
+        <app-user-dash *ngIf="role == 'user' "></app-user-dash>
         <!--user-dash-->
+
+        <!--admin-dash-->
+        <app-admin-dash *ngIf="role == 'admin' "></app-admin-dash>
+        <!--admin-dash-->
 
         
 

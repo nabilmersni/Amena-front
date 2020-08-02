@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
 
   get logemail(){return this.formLogin.get('email');};
   get logpassword(){return this.formLogin.get('password');};
+  
 
   logIn(){
     let data = this.formLogin.value;
@@ -54,7 +55,7 @@ export class LoginComponent implements OnInit {
         if(this.userService.isLoggedInAndActive()){
           this.router.navigateByUrl('/dashboard')
         }else{
-          this.router.navigateByUrl('/accountdesactiver')
+          this.router.navigateByUrl('/not-active')
         }
       },
       err =>{

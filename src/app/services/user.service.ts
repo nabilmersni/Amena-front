@@ -13,6 +13,9 @@ export class UserService {
   private _userRegisterUrl = this._baselocalUrl+ "/user/register";
   private _userLoginUrl = this._baselocalUrl + "/user/login";
   private _getUserInfo = this._baselocalUrl + "/user/one/";
+  private _getAllUser = this._baselocalUrl + "/user/all";
+  private _updateUserState = this._baselocalUrl + "/user/update-state/";
+  private _deleteUserUrl = this._baselocalUrl + "/user/delete/";
 
 
 
@@ -102,6 +105,31 @@ export class UserService {
   getUserById(id){
     let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
     return this.http.get<any>(this._getUserInfo+id,{headers: headers_options});
+  }
+
+  getAllUser(){
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.get<any>(this._getAllUser,{headers: headers_options});
+  }
+
+  updateUserState(id){
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.patch<any>(this._updateUserState+id,{headers: headers_options});
+  }
+
+  getUserInfo(id){
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.get<any>(this._getUserInfo+id,{headers: headers_options});
+  }  
+
+  updateUserInfo(formData,id){
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.patch<any>(this._updateAccountInfo+id,formData,{headers: headers_options});
+  }
+
+  deleteUser(id){
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.delete<any>(this._deleteUserUrl+id,{headers: headers_options});
   }
 
 }

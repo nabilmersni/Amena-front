@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   constructor() { }
+  role;
 
   ngOnInit(): void {
+    this.role =  new JwtHelperService().decodeToken(localStorage.getItem("token")).role;
   }
 
 }

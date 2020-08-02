@@ -20,6 +20,12 @@ import { UserHomeComponent } from './components/private/user-side/user-home/user
 import { UserAddFundraisingComponent } from './components/private/user-side/user-add-fundraising/user-add-fundraising.component';
 import { UserProfileComponent } from './components/private/user-side/user-profile/user-profile.component';
 import { FundDetailComponent } from './components/private/user-side/fund-detail/fund-detail.component';
+import { NotActiveComponent } from './components/private/not-active/not-active.component';
+import { AdminDashComponent } from './components/private/admin-side/admin-dash/admin-dash.component';
+import { UsersListComponent } from './components/private/admin-side/user-managment/users-list/users-list.component';
+import { UserUpdateComponent } from './components/private/admin-side/user-managment/user-update/user-update.component';
+import { UserAddComponent } from './components/private/admin-side/user-managment/user-add/user-add.component';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +43,11 @@ import { FundDetailComponent } from './components/private/user-side/fund-detail/
     UserAddFundraisingComponent,
     UserProfileComponent,
     FundDetailComponent,
+    NotActiveComponent,
+    AdminDashComponent,
+    UsersListComponent,
+    UserUpdateComponent,
+    UserAddComponent,
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

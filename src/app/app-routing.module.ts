@@ -10,6 +10,10 @@ import { UserAddFundraisingComponent } from './components/private/user-side/user
 import { UserProfileComponent } from './components/private/user-side/user-profile/user-profile.component';
 import { AuthGuard } from './guards/auth.guard';
 import { FundDetailComponent } from './components/private/user-side/fund-detail/fund-detail.component';
+import { NotActiveComponent } from './components/private/not-active/not-active.component';
+import { UsersListComponent } from './components/private/admin-side/user-managment/users-list/users-list.component';
+import { UserUpdateComponent } from './components/private/admin-side/user-managment/user-update/user-update.component';
+import { UserAddComponent } from './components/private/admin-side/user-managment/user-add/user-add.component';
 
 
 const routes: Routes = [
@@ -56,6 +60,33 @@ const routes: Routes = [
   {
     path: "detail/:id",
     component: FundDetailComponent,
+    canActivate : [AuthGuard]
+  },
+
+  //admin side link--------------------
+
+   {
+    path: "userManagment",
+    component: UsersListComponent,
+    canActivate : [AuthGuard]
+  },
+
+  {
+    path: "userManagment/user-update/:id",
+    component: UserUpdateComponent,
+    canActivate : [AuthGuard]
+  },
+
+  {
+    path: "userManagment/user-add",
+    component: UserAddComponent,
+
+  },
+
+
+  {
+    path: "not-active",
+    component: NotActiveComponent,
     canActivate : [AuthGuard]
   },
 
