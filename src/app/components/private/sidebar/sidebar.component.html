@@ -23,7 +23,7 @@
             <h2 class="sidebar__item__name">Users</h2>
         </div>
 
-        <div *ngIf=" role == 'admin' " class="sidebar__item" (click)="router_profile()" [ngClass]="{'active':profile()}">
+        <div *ngIf=" role == 'admin' " class="sidebar__item" (click)="router_funds()" [ngClass]="{'active':funds()}">
             <img src="../../../../assets/img/funds-icon.png" alt="dash-icon" class="sidebar__item__icon">
             <h2 class="sidebar__item__name">Funds</h2>
         </div>

@@ -25,6 +25,7 @@ import { AdminDashComponent } from './components/private/admin-side/admin-dash/a
 import { UsersListComponent } from './components/private/admin-side/user-managment/users-list/users-list.component';
 import { UserUpdateComponent } from './components/private/admin-side/user-managment/user-update/user-update.component';
 import { UserAddComponent } from './components/private/admin-side/user-managment/user-add/user-add.component';
+import { FundListComponent } from './components/private/admin-side/fund-managment/fund-list/fund-list.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { UserAddComponent } from './components/private/admin-side/user-managment
     UsersListComponent,
     UserUpdateComponent,
     UserAddComponent,
+    FundListComponent,
     
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

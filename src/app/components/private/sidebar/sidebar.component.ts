@@ -62,12 +62,21 @@ export class SidebarComponent implements OnInit {
   }
 
   router_funds(){
-    this.router.navigateByUrl("/profile");
+    this.router.navigateByUrl("/fundManagment");
   }
 
   users(){
     let url = this.router.url;
     if(url == "/userManagment"){
+      return true
+    }else{
+      return false
+    }
+  }
+
+  funds(){
+    let url = this.router.url;
+    if(url == "/fundManagment"){
       return true
     }else{
       return false

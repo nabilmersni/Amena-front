@@ -14,6 +14,7 @@ export class PostService {
   private _getAllPost = this._baselocalUrl+ "/post/all";
   private _getPostDetail = this._baselocalUrl+ "/post/detail/";
   private _getMyPost = this._baselocalUrl+ "/post/MyPost/";
+  private _deletePost = this._baselocalUrl + "/post/delete/";
 
 
 
@@ -38,6 +39,11 @@ export class PostService {
   getPostDetail(id){
     let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
     return this.http.get<any>(this._getPostDetail+id,{headers: headers_options});
+  }
+
+  deletePost(id){
+    let headers_options = new HttpHeaders().set("Authorisation",localStorage.getItem("token"));
+    return this.http.delete<any>(this._deletePost+id,{headers: headers_options});
   }
   
 

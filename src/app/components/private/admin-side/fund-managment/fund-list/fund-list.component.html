@@ -1,0 +1,62 @@
+
+<div class="dashboard-container">
+
+    <!--sidebar-->
+    <app-sidebar></app-sidebar>
+    <!--sidebar-->
+
+    <div class="content">
+
+        <!--topbar-->
+        <app-topbarr></app-topbarr>
+        <!--topbar-->
+
+        <div class="greeting">
+            <span class="greeting__section-name">Fund List</span><span class="greeting__hello">Welcome back.</span>
+        </div>
+
+        <div class="dashboard">
+            <div class="dashboard__follow-fundraising">
+                <div class="dashboard__follow-fundraising__header">
+                    <h2 class="dashboard__follow-fundraising__header__title">All Fundraising</h2>
+                </div>
+        
+                <div class="dashboard__follow-fundraising__body">
+                    <div class="card-group">
+        
+                        <div class="dashboard__follow-fundraising__body__card" *ngFor="let post of allPost" (click)= "routeTodetail(post._id)">
+                            <div class="dashboard__follow-fundraising__body__card__img">
+                                <img [src]="postImg + post.image" alt="" class="dashboard__follow-fundraising__body__card__img-1">
+                            </div>
+        
+                            <div class="dashboard__follow-fundraising__body__card__content">
+                                <h2 class="dashboard__follow-fundraising__body__card__content__title">{{post.title}}</h2>
+                                
+                                <div class="dashboard__follow-fundraising__body__card__content__group">
+                                    <div class="dashboard__follow-fundraising__body__card__content__group__user-info">
+                                        <h2 class="dashboard__follow-fundraising__body__card__content__group__user-info__name">{{post.userFullname}}</h2>
+                                        <p class="dashboard__follow-fundraising__body__card__content__group__user-info__date">{{post.date}}</p>
+                                    </div>
+        
+                                    <div class="dashboard__follow-fundraising__body__card__content__group__progress">
+                                        <p class="dashboard__follow-fundraising__body__card__content__group__progress__last-donation">Last donation 1d ago</p>
+                                        <progress max="100" value="84"></progress>
+                                        <p class="dashboard__follow-fundraising__body__card__content__group__progress__amount"><span>250000 DNT</span> raised of <span>300000 DNT</span></p>
+                                    </div>
+
+                                    <button (click)="deletePost(post)" class="remove-fund-btn"><img src="../../../../../../assets/img/trash-icon.png" alt="" class="remove-fund-btn__icon"></button>
+
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>

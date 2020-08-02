@@ -1,0 +1,144 @@
+.dashboard{
+
+    margin: 9rem 3rem 0 3rem;
+    position: relative;
+
+
+    &__follow-fundraising{
+        margin-top: 1rem;
+        background-color: #FFFFFF;
+        border-radius: 3rem;
+        color: #4A5BCF;
+        height: max-content;
+        
+    
+        &__header{
+            width: 100%;
+            height: 5rem;
+            background-color: #D6DBFD;
+            border-top-right-radius: 3rem;
+            border-top-left-radius: 3rem;
+            border-bottom-right-radius: 0.9rem;
+            border-bottom-left-radius: 0.9rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+    
+            &__title{
+                font-size: 2rem;
+            }
+        }
+    
+        &__body{
+            margin-top: 1rem;
+            padding: 0 1rem;
+            overflow-y: scroll;
+            .card-group{
+                max-height: 45rem;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+            &__card{
+                background-color: #F4E3EB;
+                border-radius: 3rem;
+                margin: 1rem 0;
+                margin-bottom: 2rem;
+                padding: 1rem;
+                padding-right: 2rem;
+                display: flex;
+                transition: all 0.3s;
+                cursor: pointer;
+    
+                &__img{ //img container
+                    height: 11rem;
+                    width: 11rem;
+    
+                    &-1{ //image
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 1.5rem;
+                    }
+                }
+    
+                &__content{
+                    width: 100%;
+    
+                    &__title{
+                        font-size: 1.9rem;
+                        text-align: center;
+                        margin-left: -10rem;
+                    }
+    
+                    &__group{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 2rem;
+                        margin-left: 1rem;
+    
+                        &__user-info{
+                            margin-top: auto;
+                            margin-right: 2rem;
+    
+                            &__name{
+                                font-size: 1.7rem;
+                                font-weight: 600;
+                                margin-bottom: 0.8rem;
+                            }
+                            &__date{
+                                font-size: 1.4rem;
+                                font-weight: 500;
+                            }
+                        }
+    
+                        &__progress{
+    
+                            &__last-donation{
+                                font-size: 1.3rem;
+                                font-weight: 600;
+                                
+                            }
+    
+                            &__amount{
+                                font-size: 1.3rem;
+                                font-weight: 600;
+                                span{
+                                    font-weight: 800;
+                                    font-size: 1.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    transform: scale(1.01);
+                }
+            }
+        }
+    }
+}
+
+.remove-fund-btn{
+    background-color: #FAF1F6;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    align-self: flex-start;
+    
+    
+
+    &:hover{
+        background-color: rgb(255, 169, 169);
+    }
+
+    &__icon{
+        width: 1.8rem;
+        height: 2rem;
+    }
+}
