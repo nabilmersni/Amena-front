@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { UserService } from 'src/app/services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-topbarr',
@@ -14,7 +15,7 @@ export class TopbarrComponent implements OnInit {
   user;
   url = "assets/img/default-pic.png";
 
-  constructor(private router: Router,private userService:UserService) { }
+  constructor(private router: Router,private userService:UserService,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     //this.username =  new JwtHelperService().decodeToken(localStorage.getItem("token")).username;
@@ -37,6 +38,8 @@ export class TopbarrComponent implements OnInit {
   logout(){
     localStorage.removeItem("token");
     this.router.navigateByUrl("/login");
+    this.toastr.success('logout successfully !');
+
   }
 
   

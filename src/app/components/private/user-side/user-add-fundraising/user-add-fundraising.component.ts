@@ -6,6 +6,7 @@ import { User } from 'src/app/models/user';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user-add-fundraising',
@@ -18,7 +19,7 @@ export class UserAddFundraisingComponent implements OnInit {
   url = "assets/img/default-img.png";
   uploadedFile: File;
 
-  constructor(private fb : FormBuilder, private userService: UserService,private postService: PostService, private router: Router) { 
+  constructor(private fb : FormBuilder, private userService: UserService,private postService: PostService, private router: Router,private toastr: ToastrService) { 
 
     let addFundraisingControls = {
 
@@ -86,12 +87,12 @@ export class UserAddFundraisingComponent implements OnInit {
   
     this.postService.addPost(formData).subscribe(
       res => {
-        console.log("post added succefully !");
-        console.log(res);
+        this.toastr.success('Fundraising added succefully !');
         this.router.navigateByUrl('/home');
       },
       err => {
-        console.log(err);
+        this.toastr.error('Fundraising not added !');
+
       }
     )
 

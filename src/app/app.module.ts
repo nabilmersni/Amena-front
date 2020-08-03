@@ -27,6 +27,9 @@ import { UserUpdateComponent } from './components/private/admin-side/user-managm
 import { UserAddComponent } from './components/private/admin-side/user-managment/user-add/user-add.component';
 import { FundListComponent } from './components/private/admin-side/fund-managment/fund-list/fund-list.component';
 
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
+
+
 
 @NgModule({
   declarations: [
@@ -60,7 +63,7 @@ import { FundListComponent } from './components/private/admin-side/fund-managmen
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
+    ToastNoAnimationModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

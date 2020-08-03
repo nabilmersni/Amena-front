@@ -16,6 +16,8 @@ progress::-webkit-progress-value {
   background: #03BF8A;
 } 
 
+@import '~ngx-toastr/toastr';
+
 @-webkit-keyframes primary-btn {
     from {
       -webkit-transform: scale(1);

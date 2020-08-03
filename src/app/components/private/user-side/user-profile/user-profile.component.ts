@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user-profile',
@@ -15,7 +16,7 @@ export class UserProfileComponent implements OnInit {
   url = "assets/img/default-img.png";
   uploadedFile: File;
 
-  constructor(private fb : FormBuilder, private userService: UserService, private router: Router) { 
+  constructor(private fb : FormBuilder, private userService: UserService, private router: Router,private toastr: ToastrService) { 
     let registerControls = {
 
       fullname : new FormControl("",[
@@ -104,13 +105,13 @@ export class UserProfileComponent implements OnInit {
   
     this.userService.updateAccountInfo(formData).subscribe(
       res => {
-        console.log("account Info updated");
-        console.log(res);
+        this.toastr.success('account Info updated !');
 
         this.router.navigateByUrl('/dashboard')
       },
       err => {
-        console.log("account info not updated");
+        this.toastr.error('account Info not updated !');
+        
       }
     )
   }

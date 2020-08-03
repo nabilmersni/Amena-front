@@ -3,6 +3,7 @@ import { UserService } from 'src/app/services/user.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class UserAddComponent implements OnInit {
 
   public formRegister : FormGroup;
 
-  constructor(private fb : FormBuilder, private userService: UserService, private router: Router) { 
+  constructor(private fb : FormBuilder, private userService: UserService, private router: Router,private toastr: ToastrService) { 
     let registerControls = {
 
       fullname : new FormControl("",[
@@ -68,10 +69,11 @@ export class UserAddComponent implements OnInit {
 
     this.userService.registerUser(user).subscribe(
       res =>{
-        this.router.navigateByUrl('/login')
+        this.toastr.success('User added succefully !');
+        this.router.navigateByUrl('/userManagment')
       },
       err =>{
-        console.log(err);
+        this.toastr.error('User not added !');
       }
     )
 

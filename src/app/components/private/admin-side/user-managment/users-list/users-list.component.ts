@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-users-list',
@@ -8,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UsersListComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private toastr: ToastrService) { }
 
   users = [];
   url = "http://localhost:3000/";
@@ -44,10 +45,11 @@ export class UsersListComponent implements OnInit {
     this.users.splice(index,1);
     this.userService.deleteUser(user._id).subscribe(
       res =>{
-        console.log("deleted")
+        this.toastr.success('User deleted !');
+
       },
       err =>{
-        console.log("not deleted")
+        this.toastr.error('User not deleted !');
       }
     )
 

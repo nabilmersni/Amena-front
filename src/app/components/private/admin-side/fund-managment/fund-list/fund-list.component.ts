@@ -3,6 +3,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { PostService } from 'src/app/services/post.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-fund-list',
@@ -18,7 +19,7 @@ export class FundListComponent implements OnInit {
   postImg = "http://localhost:3000/";
 
 
-  constructor(private router: Router,private userService:UserService, private postService: PostService,private route: Router) { }
+  constructor(private router: Router,private userService:UserService, private postService: PostService,private route: Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getProfileInfo();
@@ -56,10 +57,9 @@ export class FundListComponent implements OnInit {
   deletePost(post){
     event.stopPropagation();
 
-    //this.allPost.splice(index,1);
     this.postService.deletePost(post._id).subscribe(
       res =>{
-        console.log("deleted");
+        this.toastr.success('Fundrainsing deleted !');
         this.getAllPost();
       },
       err =>{
