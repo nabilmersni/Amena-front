@@ -158,6 +158,8 @@
         <div class="dashboard__follow-fundraising__body">
             <div class="card-group">
 
+                <div *ngIf="myPost.length == 0" class="empty-alert">you don't have any Fundraising</div>
+
                 <div class="dashboard__follow-fundraising__body__card" *ngFor="let post of myPost" (click)= "routeTodetail(post._id)">
                     <div class="dashboard__follow-fundraising__body__card__img">
                         <img [src]="postImg + post.image" alt="" class="dashboard__follow-fundraising__body__card__img-1">

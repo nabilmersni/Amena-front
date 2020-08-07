@@ -7,7 +7,7 @@ import { Post } from '../models/post';
   providedIn: 'root'
 })
 export class PostService {
-
+//http://localhost:3000
   private _baselocalUrl = "http://localhost:3000";
 
   private _postAddUrl = this._baselocalUrl+ "/post/add";
