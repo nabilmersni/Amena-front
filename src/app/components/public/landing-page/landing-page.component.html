@@ -6,10 +6,10 @@
         </div>
         <ul class="navigation__list">
             <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">About</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Donation methods</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">What's special</a></li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
+            <li class="navigation__item"><a href="#about" class="navigation__link">About</a></li>
+            <li class="navigation__item"><a href="#method" class="navigation__link">Donation methods</a></li>
+            <li class="navigation__item"><a href="#sp" class="navigation__link">What's special</a></li>
+            <li class="navigation__item"><a href="#contact" class="navigation__link">Contact</a></li>
             <div class="navigation__btn">
                 <a routerLink="/login" class="secondary-btn secondary-btn-white">Log in</a>
                 <a routerLink="/register" class="secondary-btn">Register</a>
@@ -41,13 +41,13 @@
     <div class="navigation-small__list__container">
         <ul class="navigation-small__list">
             <li class="navigation-small__item"><a href="#" class="navigation-small__link">Home</a></li>
-            <li class="navigation-small__item"><a href="#" class="navigation-small__link">About</a></li>
-            <li class="navigation-small__item"><a href="#" class="navigation-small__link">Donation methods</a></li>
-            <li class="navigation-small__item"><a href="#" class="navigation-small__link">What's special</a></li>
-            <li class="navigation-small__item"><a href="#" class="navigation-small__link">Contact</a></li>
+            <li class="navigation-small__item"><a href="#about" class="navigation-small__link">About</a></li>
+            <li class="navigation-small__item"><a href="#method" class="navigation-small__link">Donation methods</a></li>
+            <li class="navigation-small__item"><a href="#sp" class="navigation-small__link">What's special</a></li>
+            <li class="navigation-small__item"><a href="#contact" class="navigation-small__link">Contact</a></li>
             <div class="navigation-small__btn">
-                <a href="#" class="secondary-btn secondary-btn-small-nav">Log in</a>
-                <a href="#" class="secondary-btn secondary-btn-small-nav">Sign up</a>
+                <a routerLink="/login" class="secondary-btn secondary-btn-small-nav">Log in</a>
+                <a routerLink="/register" class="secondary-btn secondary-btn-small-nav">Sign up</a>
             </div>
         </ul>
     </div>
@@ -70,7 +70,7 @@
             Amena is an online donation platform that helps individuals and associations to collect money
         </h1>
 
-        <div onclick="location.href='#'" class="primary-btn__box">
+        <div routerLink="/login" class="primary-btn__box">
             <div class="primary-btn__icon-box primary-btn__icon-box-header">
                 <img src="../../../../assets/img/next.png" alt="" class="primary-btn__icon">
             </div>
@@ -87,10 +87,12 @@
 
     </div>
 
-    <div class="header__special-offer-box">
-        <lottie-player class="header__special-offer" src="https://assets7.lottiefiles.com/packages/lf20_TwbfK9.json"
-            background="transparent" speed="1" loop autoplay></lottie-player>
-    </div>
+    <a href="#sp">
+        <div class="header__special-offer-box">
+            <lottie-player class="header__special-offer" src="https://assets7.lottiefiles.com/packages/lf20_TwbfK9.json"
+                background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+    </a>
 
     <div class="scroll-box">
         <lottie-player class="scroll" src="https://assets3.lottiefiles.com/packages/lf20_A3Gtt4.json"
@@ -135,7 +137,7 @@
 
     </section>
 
-    <section class="section-association-join-us">
+    <section class="section-association-join-us" id="about">
         <div class="association-join-us">
             <img src="../../../../assets/img/association-join-us-shape.png" alt="association-join-us-shape"
                 class="association-join-us__shape">
@@ -252,7 +254,7 @@
 
     </section>
 
-    <section class="section-donation-methods">
+    <section class="section-donation-methods" id="method">
         <div class="donation-methods">
 
             <div class="donation-methods__text-box">
@@ -272,7 +274,7 @@
         </div>
     </section>
 
-    <section class="section-special-about-us">
+    <section class="section-special-about-us" id="sp">
         <div class="special-about-us">
             <div class="special-about-us__header-shape-box">
                 <img src="../../../../assets/img/special-header-shape.png" alt=""
@@ -314,7 +316,7 @@
         </div>
     </section>
 
-    <section class="section-contact">
+    <section class="section-contact" id="contact">
         <div class="contact">
             <div class="contact__header">
                 <img src="../../../../assets/img/faq.png" alt="" class="contact__shape">

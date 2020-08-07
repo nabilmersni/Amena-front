@@ -46,8 +46,8 @@
                 <li class="navigation-small__item"><a href="#" class="navigation-small__link">What's special</a></li>
                 <li class="navigation-small__item"><a href="#" class="navigation-small__link">Contact</a></li>
                 <div class="navigation-small__btn">
-                    <a href="#" class="secondary-btn secondary-btn-small-nav">Log in</a>
-                    <a href="#" class="secondary-btn secondary-btn-small-nav">Sign up</a>
+                    <a routerLink="/login" class="secondary-btn secondary-btn-small-nav">Log in</a>
+                    <a class="secondary-btn secondary-btn-small-nav">Sign up</a>
                 </div>
             </ul>
         </div>
@@ -125,7 +125,7 @@
             <button [disabled]="formRegister.invalid || (myPassword2.value != myPassword.value)" class="secondary-btn secondary-btn--roz" >Create</button>
 
             <p>you already have an account ?</p>
-            <a class="create" href="#">Go to login</a>
+            <a class="create" routerLink="/login" >Go to login</a>
         </form>
     </div>
 

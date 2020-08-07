@@ -12,10 +12,6 @@
             <h2 class="sidebar__item__name">Home</h2>
         </div>
 
-        <div *ngIf=" role == 'user' " class="sidebar__item" (click)="router_profile()" [ngClass]="{'active':profile()}">
-            <img src="../../../../assets/img/profile-icon.png" alt="dash-icon" class="sidebar__item__icon">
-            <h2 class="sidebar__item__name">Profile</h2>
-        </div>
 
         <!---------------------------------------admin side --------------------------------------->
         <div *ngIf=" role == 'admin' " class="sidebar__item" (click)="router_users()" [ngClass]="{'active':users()}">
@@ -26,6 +22,11 @@
         <div *ngIf=" role == 'admin' " class="sidebar__item" (click)="router_funds()" [ngClass]="{'active':funds()}">
             <img src="../../../../assets/img/funds-icon.png" alt="dash-icon" class="sidebar__item__icon">
             <h2 class="sidebar__item__name">Funds</h2>
+        </div>
+
+        <div class="sidebar__item" (click)="router_profile()" [ngClass]="{'active':profile()}">
+            <img src="../../../../assets/img/profile-icon.png" alt="dash-icon" class="sidebar__item__icon">
+            <h2 class="sidebar__item__name">Profile</h2>
         </div>
         
     </div>
